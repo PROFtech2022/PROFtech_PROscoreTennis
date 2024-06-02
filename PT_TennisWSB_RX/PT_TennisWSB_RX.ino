@@ -39,6 +39,9 @@ void setup() {
 
   NRF.openReadingPipe(0, address);
   NRF.startListening();
+
+  display_PROscoreTennis();
+  SevenSeg.latchData();
 }
 
 void loop() {

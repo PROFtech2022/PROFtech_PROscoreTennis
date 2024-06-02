@@ -43,7 +43,7 @@ void display_GuestSet(uint8_t set) {
 
 
 void display_GameTime(uint8_t Minute, uint8_t Second, uint8_t Millis, bool Display_Millis) {
-  SevenSeg.printOneDigit(Minute / 10 );
+  SevenSeg.printOneDigit(Minute / 10);
   SevenSeg.printOneDigit(Minute % 10);
   SevenSeg.printOneDigit((Second / 10) + 100);
   SevenSeg.printOneDigit((Second % 10) + 100);

@@ -57,9 +57,9 @@ void setup() {
 
 void loop() {
   KeyFunctions();
-  
+
   verifyVariable();
-  
+
   NRF_SendData();
 }
 
@@ -102,6 +102,8 @@ void NRF_SendData() {
 
   payload.HomeSet = HomeSet;
   payload.GuestSet = GuestSet;
+
+  payload.NowServing = NowServing;
 
   payload.GameTime_Minute = GameTime_Minute;
   payload.GameTime_Second = GameTime_Second;

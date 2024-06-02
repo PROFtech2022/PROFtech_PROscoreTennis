@@ -7,7 +7,7 @@ void KeyFunctions() {
       HomeScore--;
     } else {
       HomeScore++;
-      if(HomeScore==5){
+      if (HomeScore == 5) {
         HomeSet++;
       }
     }
@@ -18,7 +18,7 @@ void KeyFunctions() {
       GuestScore--;
     } else {
       GuestScore++;
-      if(GuestScore==5){
+      if (GuestScore == 5) {
         GuestSet++;
       }
     }
@@ -44,15 +44,29 @@ void KeyFunctions() {
     GT_started = !GT_started;
   }
 
-  if (PB_AllNoPress()) {
+  if (status_PB[PB_NowServing] && !buttonPressed) {
+    if (shift_Pressed()) {
+      NowServing = 0;
+    } else {
+      if (NowServing == 0) {
+        NowServing = 1;
+      } else if (NowServing == 1) {
+        NowServing = 2;
+      } else if (NowServing == 2) {
+        NowServing = 1;
+      } else {
+        NowServing = 0;
+      }
+    }
+  }
+
+  if (PB_NoPress()) {
     buttonPressed = false;
   } else {
     buttonPressed = true;
   }
 
-
   delay(1);
-
 }
 
 bool shift_Pressed() {
